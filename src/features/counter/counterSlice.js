@@ -1,6 +1,6 @@
 const initialState = {
   value: 0,
-  hide: false,
+  show: true,
 };
 
 const counterReducer = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const counterReducer = (state = initialState, action) => {
     case "counter/increase":
       return { ...state, value: state.value + 10 };
     case "counter/togle":
-      return { ...state, hide: !state.hide };
+      return { ...state, show: !state.show };
     default:
       return state;
   }
