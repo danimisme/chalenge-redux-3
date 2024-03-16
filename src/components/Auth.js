@@ -1,6 +1,12 @@
-import classes from './Auth.module.css'
-
+import classes from "./Auth.module.css";
+import { login } from "../features/auth/authSlice";
+import { useDispatch } from "react-redux";
 const Auth = () => {
+  const dispatch = useDispatch();
+  const handleLogin = () => {
+    dispatch(login());
+  };
+
   return (
     <main className={classes.auth}>
       <section>
@@ -13,11 +19,11 @@ const Auth = () => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" />
           </div>
-          <button>Login</button>
+          <button onClick={handleLogin}>Login</button>
         </form>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Auth
+export default Auth;
